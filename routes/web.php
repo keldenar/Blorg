@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Blog;
 
 Route::get('/', function () {
-    return view('welcome');
+    $blogs = Blog::paginate(15)->sortBy("created_at");
+    return view('welcome')->with("blogs", $blogs);
 });
 
 #Auth::routes();
@@ -28,4 +30,11 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/home', 'HomeController@index');
+Route::post('new', 'HomeController@new_post');
+
+Route::post('markdown', 'HomeController@markdown');
+
+Route::get('about', function() {
+   return view('about');
+});
+

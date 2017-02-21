@@ -1,84 +1,52 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+@section("content")
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>By: <a href="{{ url("about") }}">Bret Combast</a></h3>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        @if (Auth::check())
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Write something already.
+                            </div>
+                            <div class="panel-body">
+                                <form method="post" action="{{url("new")}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" value="{{url("/markdown")}}" id="url">
+                                    <div class="form-group">
+                                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" about="Blog" cols="80" rows="10" name="blog" id="blog" placeholder="Blog"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="button button-default">Post</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="title-target">
+                            </div>
+                            <div class="panel-body" id="blog-target">
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+                    @foreach($blogs as $blog)
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{!! $blog->title !!}</div>
+                            <div class="panel-body">{!! $blog->post !!}</div>
+                            <div class="panel-footer text-right">Posted: {{$blog->created_at}}</div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@endsection
