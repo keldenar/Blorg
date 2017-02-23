@@ -13,8 +13,9 @@
 use App\Blog;
 
 Route::get('/', function () {
+    $latest = Blog::orderBy("created_at")->first();
     $blogs = Blog::orderBy("created_at")->paginate(1);
-    return view('welcome')->with("blogs", $blogs);
+    return view('welcome')->with("blogs", $blogs)->with("latest", $latest);
 });
 
 #Auth::routes();

@@ -79,6 +79,7 @@
         }
 
     </style>
+    @yield('header')
 </head>
 <body>
     <div class="flex-center m-b-md">

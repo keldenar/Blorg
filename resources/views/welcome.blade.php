@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@section('header')
+    <meta property="og:url" content="{{ url("/") }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ $latest->title }}" />
+    <meta property="og:description" content="{{ str_limit($latest->post, $limit = 255, $end = '...') }}" />
+@endsection
+
 @section("content")
         <div class="container-fluid">
             <div class="row">
