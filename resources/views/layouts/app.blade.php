@@ -27,6 +27,7 @@
             color: #31393d;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
+            font-size: 16px;
             height: 100vh;
             margin: 0;
         }
