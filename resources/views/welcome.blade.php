@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
+    <meta property="fb:app_id" content="395891594097766">
     <meta property="og:url" content="{{ url("/") }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{  strip_tags($latest->title) }}" />
