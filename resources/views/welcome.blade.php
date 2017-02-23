@@ -3,8 +3,8 @@
 @section('header')
     <meta property="og:url" content="{{ url("/") }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ $latest->title }}" />
-    <meta property="og:description" content="{{ str_limit($latest->post, $limit = 255, $end = '...') }}" />
+    <meta property="og:title" content="{{  strip_tags($latest->title) }}" />
+    <meta property="og:description" content="{{  str_limit( strip_tags($latest->post), $limit = 255, $end = '...') }}" />
 @endsection
 
 @section("content")
