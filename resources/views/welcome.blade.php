@@ -6,7 +6,6 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{  strip_tags($latest->title) }}" />
     <meta property="og:description" content="{{  str_limit( strip_tags($latest->post), $limit = 255, $end = '...') }}" />
-    <meta property="og:image" content="" />
 @endsection
 
 @section("content")
