@@ -13,8 +13,8 @@
 use App\Blog;
 
 Route::get('/', function () {
-    $latest = Blog::orderBy("created_at")->first();
-    $blogs = Blog::orderBy("created_at")->paginate(1);
+    $latest = Blog::orderBy("created_at", "desc")->first();
+    $blogs = Blog::orderBy("created_at", "desc")->paginate(1);
     return view('welcome')->with("blogs", $blogs)->with("latest", $latest);
 });
 
