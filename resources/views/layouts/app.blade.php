@@ -83,7 +83,7 @@
     @yield('header')
 </head>
 <body>
-    <div class="flex-center m-b-md">
+    <div class="flex-center m-b-md text-center">
         <h1>Just some meaningless words.</h1>
     </div>
     <div id="app">
