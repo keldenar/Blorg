@@ -11,10 +11,7 @@
 @section("content")
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
-                    <h3>By: <a href="{{ url("about") }}">Bret Combast</a></h3>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-md-push-3">
                     <div class="col-md-12">
                         @if (Auth::check())
                         <div class="panel panel-default">
@@ -55,6 +52,20 @@
                     </div>
                     @endforeach
                     {{ $blogs->links() }}
+                </div>
+                <div class="col-md-3 col-md-pull-6">
+                    <h3>By: <a href="{{ url("about") }}">Bret Combast</a></h3>
+                </div>
+                <div class="col-md-3">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bret.combast.me.2 -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:600px"
+                         data-ad-client="ca-pub-6849314491293990"
+                         data-ad-slot="8190422788"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
             </div>
         </div>
