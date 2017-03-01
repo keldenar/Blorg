@@ -15,7 +15,10 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="{{url("/css/blog.css")}}">
+    <script src="{{url("/js/ads.js")}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/blogger.js')}}"></script>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet" type="text/css">
@@ -88,14 +91,10 @@
 </head>
 <body>
     <div class="flex-center m-b-md text-center">
-        <h1>Just some meaningless words.</h1>
+        <h1><a href="{{url("/")}}">Just some meaningless words.</a></h1>
     </div>
     <div id="app">
         @yield('content')
     </div>
-    <!-- Scripts -->
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/blogger.js')}}"></script>
 </body>
 </html>

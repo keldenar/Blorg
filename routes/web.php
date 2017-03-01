@@ -32,7 +32,5 @@ Route::post('new', 'HomeController@new_post');
 
 Route::post('markdown', 'HomeController@markdown');
 
-Route::get('about', function() {
-   return view('about');
-});
+Route::get('about', 'BlogController@about');
 

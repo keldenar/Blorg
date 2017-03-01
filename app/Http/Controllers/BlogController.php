@@ -26,4 +26,9 @@ class BlogController extends Controller
         $blogs = Blog::orderBy("created_at", "desc")->paginate(1);
         return view('welcome')->with("blogs", $blogs)->with("latest", $latest)->with("full", $full);
     }
+
+    public function about() {
+        $full = Blog::orderBy("Created_at", "asc")->get();
+        return view('about')->with("full", $full);
+    }
 }
