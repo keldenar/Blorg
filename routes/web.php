@@ -12,12 +12,8 @@
 */
 use App\Blog;
 
-Route::get('/', function () {
-    $latest = Blog::orderBy("created_at", "desc")->first();
-    $blogs = Blog::orderBy("created_at", "desc")->paginate(1);
-    return view('welcome')->with("blogs", $blogs)->with("latest", $latest);
-});
-
+Route::get('/','BlogController@index');
+Route::get('/post/{id}','BlogController@blog');
 #Auth::routes();
 
 // Authentication Routes...

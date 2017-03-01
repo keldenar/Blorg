@@ -79,6 +79,10 @@
             border: solid #000000 1px;
         }
 
+        div.striped > div:nth-of-type(even) {
+            background: #eeeeee;
+        }
+
     </style>
     @yield('header')
 </head>

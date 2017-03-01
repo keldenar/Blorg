@@ -54,7 +54,16 @@
                     {{ $blogs->links() }}
                 </div>
                 <div class="col-md-3 col-md-pull-6">
-                    <h3>By: <a href="{{ url("about") }}">Bret Combast</a></h3>
+                    <div>
+                        <h3>By: <a href="{{ url("about") }}">Bret Combast</a></h3>
+                    </div>
+                    <div class="striped">
+                        @foreach($full as $post)
+                            <div>
+                                <a href="{{url("/post/" . $post->id) }}">{{ date_format($post->created_at, "m/d/Y") }} - {{strip_tags($post->title)}}</a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="col-md-3">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
