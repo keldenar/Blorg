@@ -40,6 +40,15 @@ class HomeController extends Controller
         return redirect(url('/'));
     }
 
+    public function update_post(Request $request)
+    {
+        $blog = Blog::where("id", $request->get("id"))->first();
+        $blog->title = $request->get("title");
+        $blog->post = $request->get("blog");
+        $blog->save();
+        return redirect(url("/post/" . $blog->id));
+    }
+
 
     public function markdown(Request $request, Response $response)
     {

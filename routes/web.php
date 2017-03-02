@@ -29,6 +29,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::post('new', 'HomeController@new_post');
+Route::post('update', 'HomeController@update_post');
 
 Route::post('markdown', 'HomeController@markdown');
 
