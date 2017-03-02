@@ -20,8 +20,6 @@
     <script src="{{ url('/js/app.js') }}"></script>
     <script src="{{ url('/js/check.js') }}"></script>
 
-
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet" type="text/css">
 
