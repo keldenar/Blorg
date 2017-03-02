@@ -17,8 +17,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url("/css/blog.css")}}">
     <script src="{{url("/js/ads.js")}}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/blogger.js')}}"></script>
+    <script src="{{ url('/js/app.js') }}"></script>
+    <script src="{{ url('/js/check.js') }}"></script>
+
+
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,600" rel="stylesheet" type="text/css">
@@ -97,4 +99,6 @@
         @yield('content')
     </div>
 </body>
+
+<script src="{{ url('/js/blogger.js')}}"></script>
 </html>
